@@ -36,6 +36,14 @@ public class WorkerRestController {
     @GetMapping("/{id}")
     public ResponseEntity<Worker> retrieveById(@PathVariable Long id) {
 
+        System.out.println("Chegou!");
+
+/*        try{
+            Thread.sleep(3000L);
+        }catch (Exception e){
+
+        }*/
+
         logger.info("Port"+env.getProperty("local.server.port"));
 
         Optional<Worker> workerOptional = workerRepository.findById(id);
